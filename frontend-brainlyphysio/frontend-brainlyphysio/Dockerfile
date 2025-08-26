@@ -1,6 +1,6 @@
 # Build Stage 1
 ARG NODE_VERSION=23.7
-FROM node:${NODE_VERSION}-alpine AS build
+FROM node:${NODE_VERSION}-slim AS build
 WORKDIR /app
 
 ENV NODE_OPTIONS="--max-old-space-size=4096"
@@ -21,7 +21,7 @@ RUN pnpm run build
 
 # Build Stage 2
 
-FROM node:${NODE_VERSION}-alpine
+FROM node:${NODE_VERSION}-slim
 WORKDIR /app
 
 # Only `.output` folder is needed from the build stage
