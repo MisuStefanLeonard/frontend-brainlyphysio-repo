@@ -27,7 +27,11 @@ export default defineNuxtConfig({
         { name: 'msapplication-TileImage', content: '/ms-icon-144x144.png' },
         { name: 'theme-color', content: '#ffffff' }
       ]
-    }
+    },
+    baseURL: '/'
+  },
+  image: {
+    dir : 'public'
   },
   components: false,
   modules: [
