@@ -78,7 +78,7 @@ export default defineNuxtConfig({
 
   runtimeConfig : {
     public: {
-      apiBase : process.env.NODE_ENV === 'development' ? 'http://localhost:5190/api/' : 'https://brainlyphysio.ro',
+      apiBase : process.env.NODE_ENV === 'development' ? 'http://localhost:5190/api/' : 'https://brainlyphysio.ro/api/',
       siteUrl: process.env.NODE_ENV === 'production'
       ? 'https://brainlyphysio.ro'
       : 'http://localhost:3000'
