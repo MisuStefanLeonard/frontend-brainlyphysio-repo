@@ -13,7 +13,7 @@
             </v-img>
         </div>
         <section>
-            <h1 class="text-black font-weight-light text-center my-4 mx-3">
+            <h1 class="text-black font-weight-light text-center my-4 mx-3" style="font-size: 2rem;">
                 Brainly Physio: Educație în Fizioterapia Modernă
             </h1>
             <v-row no-gutters >

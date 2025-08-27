@@ -121,7 +121,7 @@
   }
   
   const goToRegister = () => {
-    navigateTo('/user/register')
+    navigateTo('/register')
   }
   
   
