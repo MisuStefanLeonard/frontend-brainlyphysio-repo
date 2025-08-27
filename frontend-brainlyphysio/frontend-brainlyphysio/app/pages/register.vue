@@ -235,6 +235,7 @@
     const isValid = await form?.value.validate();
     if (form.value) {
       if(isValid.valid && termsAndConditions.value){
+        try {
           const registerData = {
             name: null,
             prename: null,
@@ -246,26 +247,26 @@
             isVerified: false,
             role: 'Membru',
           }
-          const {error} = await useFetch(config.public.apiBase + 'auth/inregistrare', {
-                method : 'POST',
-                body: registerData,
-                watch: false
-                // credentials: 'include'
-            })
-          
-          if(error.value === undefined){
-            swal.close()
-            showSuccesfulRegistrationBanner()
-            email.value = ''
-            password.value = ''
-            r_password.value = ''
-            termsAndConditions.value = false
-            form.value.resetValidation()
-          }else{
-            showUnsuccesfulRegistrationBanner()
-            swal.close()
-            return;
-          }
+          const method = 'POST'
+          const url = 'auth/inregistrare'
+          await $fetch(config.public.apiBase + url, {
+            method: method,
+            credentials: 'include',
+            body: registerData
+          })
+          swal.close()
+          showSuccesfulRegistrationBanner()
+          email.value = ''
+          password.value = ''
+          r_password.value = ''
+          termsAndConditions.value = false
+          form.value.resetValidation()
+          return
+        } catch (error) {
+          console.error(error)
+          showUnsuccesfulRegistrationBanner()
+          swal.close()
+        }
       }else{
         swal.close()
         fireAlarm('error' , 'Eroare' , 'Verificati formularul' , null);

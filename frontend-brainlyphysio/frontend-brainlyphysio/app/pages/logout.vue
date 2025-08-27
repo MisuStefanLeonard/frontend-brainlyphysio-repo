@@ -92,10 +92,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url(/logo.png);
+    background-image: url(/cover.jpeg);
     background-size: cover;
     background-position: center;
-    opacity: 0.5; 
+    opacity: 0.7; 
   }
   
   .content {

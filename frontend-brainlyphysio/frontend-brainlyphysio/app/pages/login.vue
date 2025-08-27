@@ -178,34 +178,35 @@
     const isValid = await loginForm.value.validate();
     waitLogInBanner.value = true;
     if (isValid.valid) {
-        const boydObj = {
-            NumeProp : formData.value.username_email ,
-            ParolaProp :  formData.value.password,
-            TokenProp : '',
-            RoleProp: ''
-        }
-        const {error} = useFetch(config.public.apiBase + 'auth/login' , {
-          method: 'POST',
-          credentials: 'include',
-          body: boydObj
-        })
-        console.log(error.value)
-        if(error.value === undefined){
-            isLoggedIn.value = true;
-            await emitter.emit('isLoggedIn', isLoggedIn.value);
-            store.initializeAuth();
-            localStorage.setItem('info' , formData.value.username_email);
-            navigateTo("/home")
-            waitLogInBanner.value = false;
-        }else{
-            if(error.value.statusCode === 404){
-                waitLogInBanner.value = false;
-                showWrongCredentialsBanner()
-            }else {
-                waitLogInBanner.value = false;
-                showError();
-            }
-            return;
+        try {
+          const bodyObj = {
+              NumeProp : formData.value.username_email ,
+              ParolaProp :  formData.value.password,
+              TokenProp : '',
+              RoleProp: ''
+          }
+          const method = 'POST';
+          const url = 'auth/login'
+          await $fetch(config.public.apiBase + url, {
+            method: method,
+            credentials: 'include',
+            body : bodyObj
+          })
+          isLoggedIn.value = true;
+          await emitter.emit('isLoggedIn', isLoggedIn.value);
+          store.initializeAuth();
+          localStorage.setItem('info' , formData.value.username_email);
+          navigateTo("/home")
+          waitLogInBanner.value = false;
+
+        } catch (error) {
+          console.error(error)
+          waitLogInBanner.value = false;
+          if(error.statusCode === 404){
+            showWrongCredentialsBanner()
+          }else{
+            showError();
+          }
         }
     } else {
         $swal.fire({
@@ -218,11 +219,6 @@
     }
   };
   
-  
-  
-//   const forgotPassword = () => {
-//     navigateTo(localePath('/user/forgotpassword'))
-//   }
   
   </script>
   
