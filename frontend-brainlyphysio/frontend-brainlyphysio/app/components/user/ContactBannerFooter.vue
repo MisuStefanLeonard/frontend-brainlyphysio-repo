@@ -16,12 +16,12 @@
             <v-row>
               <v-col cols="12" class="pa-3">
                 <p class="text-center text-white mt-4 mx-2 font-weight-bold">
-                  Academia educațională dedicată fizioterapeuților, medicilor și pacienților 
-                  care caută răspunsuri bazate pe știință
+                  Academia dedicată fizioterapeuților, pacienților si altor specialisti din aria medicala ce 
+                  caută informatii bazate pe știință
                 </p>
                 <v-divider opacity="0"></v-divider>
                 <p class="text-center text-white">
-                  Alătură-te nouă ca să înveți ultimele noutăți despre fizioterapie!
+                  Alătură-te nouă pentru a invata ultimele noutăți despre fizioterapie!
                 </p>
                 <v-divider opacity="0"></v-divider>
                 <p class="text-center text-white font-weight-bold">
