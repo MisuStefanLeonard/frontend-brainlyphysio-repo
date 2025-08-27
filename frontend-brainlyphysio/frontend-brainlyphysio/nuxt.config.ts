@@ -20,7 +20,7 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/favicon-96x96.png' },
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
         { rel: 'manifest', href: '/manifest.json' },
-        { rel: 'canonical' , href: 'to-add'}
+        { rel: 'canonical' , href: 'https://brainlyphysio.ro/'}
       ],
       meta: [
         { name: 'msapplication-TileColor', content: '#ffffff' },
@@ -72,20 +72,20 @@ export default defineNuxtConfig({
     blockNonSeoBots:true,
     blockAiBots: true,
     disallow : ['/admin/**'],
-    sitemap :  process.env.NODE_ENV === 'development' ? 'http://localhost:3000/sitemap.xml' :'https://texxshop.ro/sitemap.xml'
+    sitemap :  process.env.NODE_ENV === 'development' ? 'http://localhost:3000/sitemap.xml' :'https://brainlyphysio.ro/sitemap.xml'
   },
 
 
   runtimeConfig : {
     public: {
-      apiBase : process.env.NODE_ENV === 'development' ? 'http://localhost:5190/api/' : 'to-add',
+      apiBase : process.env.NODE_ENV === 'development' ? 'http://localhost:5190/api/' : 'https://brainlyphysio.ro',
       siteUrl: process.env.NODE_ENV === 'production'
       ? 'to-add'
       : 'http://localhost:3000'
     }
   },
   site: {
-    url:  process.env.NODE_ENV === 'development' ? 'http://localhost:3000/sitemap.xml' : 'https://texxshop.ro',
+    url:  process.env.NODE_ENV === 'development' ? 'http://localhost:3000/sitemap.xml' : 'https://brainlyphysio.ro',
     name: 'BrainlyPhysio',
   },
 })

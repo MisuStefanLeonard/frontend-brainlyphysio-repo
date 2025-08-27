@@ -198,7 +198,7 @@ useSeoMeta({
     ogDescription: 'Descoperă o abordare modernă a recuperării medicale. Brainly Physio oferă conținut bazat 100% pe știință pentru fizioterapeuți, medici și pacienți. Alătură-te comunității!',
     ogTitle: 'Brainly Physio: Revoluționăm Educația în Fizioterapie',
     description: 'Brainly Physio este platforma ta de educație în fizioterapie modernă. Oferim resurse video, articole și cursuri bazate pe dovezi științifice pentru specialiști și pacienți. Demontăm mituri și promovăm gândirea critică în recuperarea medicală.',
-    canonicalUrl: () =>  process.env.NODE_ENV === 'development' ? `http://localhost:3000/home` : `https://texxshop.ro/home`
+    canonicalUrl: () =>  process.env.NODE_ENV === 'development' ? `http://localhost:3000/home` : `https://brainlyphysio.ro/lhome`
 })
 
 

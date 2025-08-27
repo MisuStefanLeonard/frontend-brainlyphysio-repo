@@ -107,7 +107,7 @@
     ogDescription : 'Logheaza-te pe BrainlyPhysio Academy pentru a intra in orizontul larg al cunoasterii fizioterapiei si kinetoterapiei',
     ogTitle: 'BrainlyPhysio - Logare',
     description : 'Logheaza-te pe BrainlyPhysio Academy pentru a intra in orizontul larg al cunoasterii fizioterapiei si kinetoterapiei',
-    canonicalUrl: () =>  process.env.NODE_ENV === 'development' ? 'http://localhost:3000/login' : 'to-add'
+    canonicalUrl: () =>  process.env.NODE_ENV === 'development' ? 'http://localhost:3000/login' : 'https://brainlyphysio.ro/login'
   })
   
   

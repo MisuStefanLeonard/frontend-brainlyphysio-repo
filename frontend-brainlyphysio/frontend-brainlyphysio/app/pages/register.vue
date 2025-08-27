@@ -118,7 +118,7 @@
     ogDescription : 'Inregistreaza-te pe BrainlyPhysio. Totul la un click distanta de cele mai bune cursuri de fizioterapie.',
     ogTitle: 'BrainlyPhysio - Inregistrare',
     description : 'Inregistreaza-te pe BrainlyPhysio. Totul la un click distanta de cele mai bune cursuri de fizioterapie.',
-    canonicalUrl: () =>   process.env.NODE_ENV === 'development' ? 'http://localhost:3000/register' : 'to-add'
+    canonicalUrl: () =>   process.env.NODE_ENV === 'development' ? 'http://localhost:3000/register' : 'https://brainlyphysio.ro/register'
   })
   
   const config = useRuntimeConfig()

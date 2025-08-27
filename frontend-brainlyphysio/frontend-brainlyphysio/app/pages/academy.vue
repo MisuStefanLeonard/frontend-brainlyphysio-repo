@@ -85,7 +85,7 @@ useSeoMeta({
     ogDescription : `Invata de la noi prin Academie BrainlyPhysio unde ai acces la tot felul de articole,cursuri si iti putem raspunde la orice intrebare pe care o ai.Haide pe BrainlyPhysio Academy sa invatam impreuna!`,
     ogTitle: 'Academie',
     description : `Invata de la noi prin Academie BrainlyPhysio unde ai acces la tot felul de articole,cursuri si iti putem raspunde la orice intrebare pe care o ai.Haide pe BrainlyPhysio Academy sa invatam impreuna!`,
-    canonicalUrl: () => process.env.NODE_ENV === 'development' ? `http://localhost:3000/academy` : `https://texxshop.ro/academy`
+    canonicalUrl: () => process.env.NODE_ENV === 'development' ? `http://localhost:3000/academy` : `https://brainlyphysio.ro/academy`
 })
 
 

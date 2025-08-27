@@ -210,7 +210,7 @@
     ogDescription : 'Echipa BrainlyPhysio este constituita din cei mai pregatiti membrii in domeniul kinetoterapiei,masajului si fizioterapiei. Apeleaza la noi pentru cunostine bine structurate in domeniul fizioterapiei.',
     ogTitle: 'Echipa BrainlyPhysio',
     description : 'Echipa BrainlyPhysio este constituita din cei mai pregatiti membrii in domeniul kinetoterapiei,masajului si fizioterapiei. Apeleaza la noi pentru cunostine bine structurate in domeniul fizioterapiei.',
-    canonicalUrl: () =>  process.env.NODE_ENV === 'development' ? 'http://localhost:3000/team' : 'to-add'
+    canonicalUrl: () =>  process.env.NODE_ENV === 'development' ? 'http://localhost:3000/team' : 'https://brainlyphysio.ro/login'
   })
   
   const height = computed(() => {

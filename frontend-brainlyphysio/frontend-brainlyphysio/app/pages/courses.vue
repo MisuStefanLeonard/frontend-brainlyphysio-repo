@@ -169,7 +169,7 @@ useSeoMeta({
     ogDescription : `Fii primul care află noutățile de la BrainlyPhysio Academy! Aici postăm toate cursurile și anunțurile despre evenimentele noastre, inclusiv workshop-uri live în orașul tău. De la Suceava la Timișoara, aducem expertiza mai aproape de tine. Verifică acum!`,
     ogTitle: 'Cursuri / Anunturi',
     description : `Descoperă lista completă de cursuri și anunțuri BrainlyPhysio Academy. Găsește workshop-uri de fizioterapie în orașul tău, acumulează puncte EMC și învață cele mai noi tehnici de recuperare. Nu rata următorul eveniment!`,
-    canonicalUrl: () => process.env.NODE_ENV === 'development' ? `http://localhost:3000/courses` : `https://texxshop.ro/courses`
+    canonicalUrl: () => process.env.NODE_ENV === 'development' ? `http://localhost:3000/courses` : `https://brainlyphysio.ro/courses`
 })
 
 
