@@ -80,7 +80,7 @@ export default defineNuxtConfig({
     public: {
       apiBase : process.env.NODE_ENV === 'development' ? 'http://localhost:5190/api/' : 'https://brainlyphysio.ro',
       siteUrl: process.env.NODE_ENV === 'production'
-      ? 'to-add'
+      ? 'https://brainlyphysio.ro'
       : 'http://localhost:3000'
     }
   },

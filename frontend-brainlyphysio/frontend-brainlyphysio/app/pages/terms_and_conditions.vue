@@ -92,7 +92,7 @@ const data = ref([
     {
         title: '3. INFORMAȚII DESPRE NOI',
         paragraphs: [
-
+            'Brainly este un proiect voluntar pe care noi (câțiva prieteni pasionați de fizioterapie) l am pornit , in primul rand pentru a avea mai multa motivație sa învățăm noi și mai apoi pentru a putea dezvolta comunitatea de fizioterapeuți din Romania. Brainly Physio este pentru cei ce caută sens, nu doar răspunsuri.'
         ]
     },
     {
@@ -226,7 +226,7 @@ const data = ref([
             'SUNTETI DE ACORD CA:',
             'acești Termeni și Condiții, Politica de Confidențialitate și Cookie-uri a BrainlyPhysio Academy și toate chestiunile legate de accesul și utilizarea de către dumneavoastră a BrainlyPhysio Academy vor fi guvernate și interpretate în conformitate cu legislația engleză, fără a da efect dispozițiilor sale privind conflictul de legi;',
             'acești Termeni și Condiții, Politica de Confidențialitate și Cookie-uri și (dacă este cazul) termenii și condițiile BrainlyPhysio Academy Plus, constituie întregul acord între dumneavoastră și BrainlyPhysio Academy cu privire la obiectul prezentului și înlocuiesc și anulează toate înțelegerile sau acordurile anterioare sau contemporane, scrise sau orale, referitoare la acest subiect;',
-            'dacă orice prevedere a acestor Termeni și Condiții este considerată invalidă de către o instanță competentă, invaliditatea unei astfel de prevederi nu va afecta valabilitatea celorlalte prevederi ale acestor Termeni și Condiții, care vor rămâne în vigoare și cu efect deplin; și',
+            'dacă orice prevedere a acestor Termeni și Condiții este considerată invalidă de către o instanță competentă, invaliditatea unei astfel de prevederi nu va afecta valabilitatea celorlalte prevederi ale acestor Termeni și Condiții, care vor rămâne în vigoare și cu efect deplin și',
             'nicio renunțare la oricare dintre prevederile acestor Termeni și Condiții nu va fi considerată o renunțare ulterioară sau continuă la o astfel de prevedere sau la orice altă prevedere, iar eșecul BrainlyPhysio Academy de a revendica orice drept sau prevedere în conformitate cu acești Termeni și Condiții nu va constitui o renunțare la un astfel de drept sau prevedere.'
         ]
     }

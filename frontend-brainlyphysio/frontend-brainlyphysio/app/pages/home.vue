@@ -206,22 +206,27 @@ const logos = [
     {
         text: 'Instagram',
         path: '/instagram.png',
+        redirect : 'https://www.instagram.com/brainly.physio?igsh=MW13eTloZmVqZ2F4Zg=='
     },
     {
         text: 'Youtube',
         path: '/youtube.png',
+        redirect : 'https://youtube.com/@brainlyphysio?si=n9styisF0AhEWBkL'
     },
     {
         text: 'Tiktok',
         path: '/tiktok.png',
+        redirect : 'https://www.tiktok.com/@brainly.physio?_t=ZN-8yfyFLISsac&_r=1'
     },
     {
         text: 'Facebook',
         path: '/facebook.png',
+        redirect : 'https://www.facebook.com/share/1GA7QFHyJC/'
     },
     {
         text: 'Patreon',
         path: '/patreon.png',
+        redirect : 'https://www.patreon.com/BrainlyPhysio?utm_campaign=creatorshare_creator'
     },
 ]
 

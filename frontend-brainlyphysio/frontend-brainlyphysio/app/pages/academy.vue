@@ -45,7 +45,7 @@
                                         <div class=" ml-3 d-flex align-center">
                                             <p >
                                                 <a class="text-decoration-none
-                                                text-white font-weight-bold" href="">{{ item.name.toUpperCase() }}</a>
+                                                text-white font-weight-bold" :href="item.href" target="_blank">{{ item.name.toUpperCase() }}</a>
                                             </p>
                                         </div>
                                     </div>
