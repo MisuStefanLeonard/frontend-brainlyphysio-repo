@@ -35,7 +35,7 @@
                                                 :src="item.presignedUrl"
                                                 height="500px"
                                                 cover
-                                                class="zoom-image cursor-pointer"
+                                                class="zoom-image cursor-pointer contain-image"
                                             ></v-img>
                                         </template>
                                     </v-tooltip>
@@ -215,5 +215,23 @@ onBeforeMount(async () => {
 <style scoped>
 .overlay {
     background-color: rgba(0, 0, 0, 0.4);
+}
+
+.image-container {
+    overflow: hidden;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.zoom-image {
+    transition: transform 0.5s ease;
+  }
+  
+.image-container:hover .zoom-image {
+    transform: scale(1.1);
+}
+
+.contain-image .v-img__img {
+  object-fit: contain !important; /* instead of cover */
 }
 </style>
