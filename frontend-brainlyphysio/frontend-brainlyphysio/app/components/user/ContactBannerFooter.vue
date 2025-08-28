@@ -4,7 +4,6 @@
       <div class="image-hover-dark">
         <v-img 
           src="/cover.jpeg"
-          preload
           cover
           format="webp"
           alt="background_image"

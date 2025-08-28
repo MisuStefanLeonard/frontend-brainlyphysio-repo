@@ -8,7 +8,7 @@
           prefetch-on="visibility"
           v-for="image in images" :key="image">
           <NuxtImg
-            preload  format="webp"
+            format="webp"
             height="25"
             width="25"
             :src="image.path"
@@ -20,7 +20,7 @@
       <v-divider v-for="i in 20" :key="i"></v-divider>
       <v-row>
         <v-col cols="12" xs="12" sm="12" md="1">
-          <NuxtImg preload  format="webp"
+          <NuxtImg format="webp"
           src="/logo.png"
           width="60"
           height="60">

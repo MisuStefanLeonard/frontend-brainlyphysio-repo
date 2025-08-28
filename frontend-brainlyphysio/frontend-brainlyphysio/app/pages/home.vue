@@ -155,18 +155,27 @@
                                             susține-ne pe Patreon și alătură-te unei comunități informate și pasionate de sănătate.
                                         </h3>
                                     </v-col>
-                                    <v-col cols="12"  xs="12" sm="12" md="12" class="d-flex align-center justify-center">
-                                        <span class="cursor-pointer" v-for="(logo,index) in logos" :key="index">
-                                            <v-tooltip :text="logo.text">
-                                                <template v-slot:activator="{ props }">
-                                                    <NuxtImg :src="logo.path" class="mr-4" v-bind="props"
-                                                        width="30"
-                                                        :alt="`${logo.text + 'logo'}`"
-                                                        height="30">
-                                                    </NuxtImg>
-                                                </template>
-                                            </v-tooltip>
-                                        </span>
+                                    <v-col cols="12" xs="12" sm="12" md="12"
+                                    class="d-flex align-center justify-center"
+                                    >
+                                    <NuxtLink
+                                        v-for="(logo, index) in logos"
+                                        :key="index"
+                                        :to="logo.href"  
+                                        class="cursor-pointer mr-4"
+                                    >
+                                        <v-tooltip :text="logo.text">
+                                        <template v-slot:activator="{ props }">
+                                            <NuxtImg
+                                            :src="logo.path"
+                                            width="30"
+                                            height="30"
+                                            :alt="`${logo.text} logo`"
+                                            v-bind="props"
+                                            />
+                                        </template>
+                                        </v-tooltip>
+                                    </NuxtLink>
                                     </v-col>
                                 </v-row>
                             </v-col>

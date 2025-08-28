@@ -30,5 +30,8 @@
     "onlyBuiltDependencies": [
       "sharp"
     ]
+  },
+  "engines": {
+    "node": "v23.5.0"
   }
 }

@@ -83,6 +83,7 @@
                       <div v-else>
                         <p class="font-weight-light"> N/A </p>
                       </div>
+                      <p class="font-weight-bold my-2">Calitati</p>
                       <div v-if="members[0].memberQualities.length > 0" class="mb-2">
                         <p class="font-weight-light" v-for="(quality,index) in members[0].memberQualities" :key="index">
                           <v-icon :icon="mdiArrowRight" size="18"></v-icon>
@@ -103,7 +104,7 @@
       </div>
       <v-divider v-for="i in 50" :key="i" opacity="0"></v-divider>
       <!-- Echipa -->
-      <section id="team-leader" class="text-center w-100" v-if="members && members.length > 0">
+      <section id="members" class="text-center w-100" v-if="members && members.length > 0">
         <p class="font-weight-thin text-h5 text-center">Echipa</p>
         <div class="ma-4">
           <v-row>
@@ -116,7 +117,7 @@
             >
               <v-card class="mx-auto elevation-12 rounded-xl text-center" >
                 <div class="image-container">
-                  <v-img :src="item.presignedUrl" height="500px" cover class="zoom-image"></v-img>
+                  <v-img :src="item.presignedUrl" height="500"  cover class="zoom-image"></v-img>
                 </div>
   
                 <v-card-title>
@@ -193,12 +194,6 @@
   definePageMeta({
     layout: 'default'
   })
-  
-  const { name } = useDisplay()
-  const config = useRuntimeConfig()
-  const members = ref([])
-  const expandIndex = ref(-1)
-
 
   useSeoMeta({
     title: 'Echipa BrainlyPhysio',
@@ -211,6 +206,11 @@
     canonicalUrl: () =>  process.env.NODE_ENV === 'development' ? 'http://localhost:3000/team' : 'https://brainlyphysio.ro/login'
   })
   
+  const { name } = useDisplay()
+  const config = useRuntimeConfig()
+  const members = ref([])
+  const expandIndex = ref(-1)
+  const loaded = ref(false)
   const height = computed(() => {
     switch (name.value) {
       case 'xs':
@@ -221,37 +221,37 @@
         return 6
     }
   })
+  
 
   const loadTeamMembers = (async () => {
-
     const getURL = 'user/members'
     const method = 'GET'
 
     const {data,error} = await useFetch(config.public.apiBase + getURL , {
       method: method,
-      credentials: 'omit'
+      credentials: 'include',
+      // server: false,
     })
 
     if(error.value === undefined){
       members.value = data.value
-      console.log(members.value)
+      process.env.NODE_ENV === 'development' ? console.log(members.value) : ''
     }else{
       console.error("Error occured when fethcing members. Sorry")
     }
   })
 
-  const loaded = ref(false)
+ 
   
 
-  onBeforeMount(async () => {
-    await loadTeamMembers()
-    console.log('loaded')
+  onBeforeMount( () => {
+    setTimeout(async () => {
+      await loadTeamMembers()
+    }, 1);
   })
 
   onMounted(() => {
     loaded.value = true
-    console.log('mounted')
-
   })
   </script>
   
@@ -262,8 +262,8 @@
   
   .image-container {
     overflow: hidden;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    /* border-top-left-radius: 12px;
+    border-top-right-radius: 12px; */
   }
   
   .zoom-image {

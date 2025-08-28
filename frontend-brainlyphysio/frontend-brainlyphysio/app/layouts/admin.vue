@@ -12,6 +12,6 @@
   <script setup>
   import AdminNavBar from '~/components/admin/AdminNavBar.vue';
   import AdminFooter from '~/components/admin/AdminFooter.vue';
-//   import SnackbarExpired from '~/components/SnackbarExpired.vue';
+  import SnackbarExpired from '~/components/SnackbarExpired.vue';
   
   </script>

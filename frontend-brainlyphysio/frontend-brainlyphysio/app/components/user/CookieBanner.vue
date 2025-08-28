@@ -7,8 +7,7 @@
                      src="/logo.png" 
                      alt="Logo" :height="45" :width="45" 
                      class="mr-1"
-                     format="webp"
-                     preload/>
+                     format="webp"/>
                 </v-card-title>
                 <v-card-text class="text-left">
                     <v-row>

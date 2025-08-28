@@ -30,9 +30,6 @@ export default defineNuxtConfig({
     },
     baseURL: '/'
   },
-  image: {
-    dir : 'public'
-  },
   components: false,
   modules: [
     '@nuxt/image',
@@ -45,9 +42,6 @@ export default defineNuxtConfig({
   ],
   ssr: true,
   vuetify: {
-    moduleOptions: {
-      /* module specific options */
-    },
     vuetifyOptions: './vuetify.config.ts'
   },
   css: [
@@ -85,7 +79,7 @@ export default defineNuxtConfig({
     }
   },
   site: {
-    url:  process.env.NODE_ENV === 'development' ? 'http://localhost:3000/sitemap.xml' : 'https://brainlyphysio.ro',
+    url:  process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://brainlyphysio.ro',
     name: 'BrainlyPhysio',
   },
 })

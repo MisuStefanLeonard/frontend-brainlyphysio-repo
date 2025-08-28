@@ -22,7 +22,7 @@
                         :data-aos="indexAnnounce % 2 === 0 ? 'flip-left' : 'flip-right'"
                         data-aos-duration="1500"
                         >
-                            <v-card class="mx-auto elevation-12 rounded-xl text-center">
+                            <v-card class="mx-auto elevation-24 rounded-xl text-center bg-grey-lighten-3">
                                 <div class="image-container">
                                     <v-tooltip
                                         location="bottom"
@@ -194,7 +194,7 @@ const loadAnnounces = (async () => {
     const url = 'user/announces'
 
     const {data,error} = await useFetch(config.public.apiBase + url, {
-        credentials: 'omit',
+        credentials: 'include',
         method : method
     })
 
@@ -206,8 +206,11 @@ const loadAnnounces = (async () => {
     }
 })
 
-onBeforeMount(async () => {
-    await loadAnnounces()
+onBeforeMount(() => {
+    setTimeout(async () => {
+        await loadAnnounces()
+    }, 1);
+    
 })
 
 </script>

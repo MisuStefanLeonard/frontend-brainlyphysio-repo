@@ -12,7 +12,7 @@
   </template>
   
 <script setup>
-  // import SnackbarExpired from '~/components/SnackbarExpired.vue';
+  import SnackbarExpired from '~/components/SnackbarExpired.vue';
   import CookieBanner from '~/components/user/CookieBanner.vue';
   import NavigationBar from '~/components/user/NavigationBar.vue';
   import FooterComp from '~/components/user/Footer.vue';

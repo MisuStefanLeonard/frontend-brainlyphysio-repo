@@ -10,7 +10,7 @@
         <v-toolbar-title class="d-none d-sm-flex align-center h-100">
           <NuxtLink to="home"  class="text-decoration-none d-flex align-center cursor-pointer">
             <NuxtImg loading="lazy" src="/logo.png" 
-            alt="Logo" :height="50" :width="50" class="mr-1" preload  format="webp"/>
+            alt="Logo" :height="50" :width="50" class="mr-1"  format="webp"/>
           </NuxtLink>
         </v-toolbar-title>
         <div class="d-none d-md-flex align-center flex-grow-1">
@@ -61,7 +61,7 @@
   <script setup>
   import { ref } from 'vue'
   import NavigationDrawer from './NavigationDrawer.vue' 
-  import { mdiHome, mdiInformation,mdiAccountGroup, mdiPhone, mdiEmail, mdiSecurity} from '@mdi/js'
+  import { mdiHome, mdiInformation,mdiAccountGroup, mdiPhone, mdiEmail, mdiSecurity,mdiBookOpen} from '@mdi/js'
   
   const sidebar = ref(false)
   const isLoggedIn = ref(false)
@@ -83,7 +83,7 @@
     { title: 'Acasa', path: '/home', icon: mdiHome , dropdown: [],text: 'Acasa'},
     { title: 'Academie', path: '/academy', icon: mdiInformation , dropdown: [],text: 'Academie'},
     { title: 'Echipa', path: '/team', icon: mdiAccountGroup, dropdown: [] ,text: 'Echipa'},
-    { title: 'Cursuri', path: '/courses', icon: mdiAccountGroup, dropdown: [] ,text: 'Cursuri'},
+    { title: 'Cursuri', path: '/courses', icon: mdiBookOpen, dropdown: [] ,text: 'Cursuri'},
   ]
 
   const adminItems = ref([
