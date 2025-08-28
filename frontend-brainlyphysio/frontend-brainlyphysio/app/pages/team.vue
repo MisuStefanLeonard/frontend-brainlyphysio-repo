@@ -67,7 +67,6 @@
                       </v-col>
                     </v-row>
                   </v-card-actions>
-    
                   <v-expand-transition>
                     <div v-if="expandIndex === 0">
                       <v-card-text class="text-center">
@@ -75,7 +74,6 @@
                         {{ members[0].description }}
                       </p>
                       <p class="font-weight-bold mt-2">Locatii</p>
-                      <v-divider></v-divider>
                       <div v-if="members[0].memberLocations.length > 0" class="mb-2">
                         <p class="font-weight-light" v-for="(location,index) in members[0].memberLocations" :key="index">
                           <v-icon :icon="mdiArrowRight" size="18"></v-icon>
@@ -87,7 +85,7 @@
                       </div>
                       <div v-if="members[0].memberQualities.length > 0" class="mb-2">
                         <p class="font-weight-light" v-for="(quality,index) in members[0].memberQualities" :key="index">
-                          <v-icon :icon="mdiStar" size="18"></v-icon>
+                          <v-icon :icon="mdiArrowRight" size="18"></v-icon>
                           {{ quality.qualityName }}
                         </p>
                       </div>

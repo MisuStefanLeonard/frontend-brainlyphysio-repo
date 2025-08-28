@@ -74,7 +74,7 @@ export default defineNuxtConfig({
     disallow : ['/admin/**'],
     sitemap :  process.env.NODE_ENV === 'development' ? 'http://localhost:3000/sitemap.xml' :'https://brainlyphysio.ro/sitemap.xml'
   },
-
+  
 
   runtimeConfig : {
     public: {

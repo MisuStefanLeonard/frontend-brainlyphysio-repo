@@ -311,7 +311,7 @@ const memberFormData = ref([
         model: 'description',
         maxLength: 150,
         rules: [
-            value => !!value || 'Nr telefon nu poate fi gol',
+            value => !!value || 'Descrierea nu poate fi goala',
             value => value.length <= 150 || 'Sunt permise maxim 150 de caractere',
         ],
     },
@@ -321,7 +321,13 @@ const memberFormData = ref([
         accept: 'image/*',
         placeholder: 'Selectează un fișier',
         model: 'image',
-        rules: [() => isLenOfFileValid.value || 'Numele fișierului trebuie să aibă mai puțin de 100 de caractere'],
+        rules: [
+            value => {
+                if (!value) return true; 
+
+                return value.name.length <= 255 || 'Numele fișierului trebuie să aibă mai puțin de 255 de caractere';
+            }
+        ],
     },
     {
         type: 'select-multiple',
@@ -363,12 +369,12 @@ const filteredMembers = computed(() => {
   });
 })
 
-const isLenOfFileValid = computed(() => {
-    if(memberData.value.image === null){
-        return true;
-    }
-    return memberData.value.image?.name.length <= 255;
-});
+// const isLenOfFileValid = computed(() => {
+//     if(memberData.value.image === null){
+//         return true;
+//     }
+//     return memberData.value.image?.name.length <= 255;
+// });
 
 const handleFileUpload = (() => {
     memberData.value.presignedUrl = URL.createObjectURL(memberData.value.image);
@@ -504,15 +510,6 @@ const itemDisplayForVSelect = (model, item) => {
     return `${item.qualityName}`
   }
   return ''
-}
-
-const getCurrentId = (model) => {
-    if (model === 'memberLocations') {
-        return 'idLocation'
-    }
-    if (model === 'memberQualities') {
-        return 'idQuality'
-    }
 }
 
 

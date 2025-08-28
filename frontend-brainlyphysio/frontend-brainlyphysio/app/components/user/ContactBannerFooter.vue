@@ -21,7 +21,7 @@
                 </p>
                 <v-divider opacity="0"></v-divider>
                 <p class="text-center text-white">
-                  Alătură-te nouă pentru a invata ultimele noutăți despre fizioterapie!
+                  Alătură-te nouă pentru a invăta ultimele noutăți despre fizioterapie!
                 </p>
                 <v-divider opacity="0"></v-divider>
                 <p class="text-center text-white font-weight-bold">
