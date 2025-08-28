@@ -259,6 +259,8 @@ const memberData = ref({
     memberQualities: []
 });
 
+const originalMemberData = ref({})
+
 const memberFormData = ref([
     {
         type: 'text-field',
@@ -370,12 +372,6 @@ const filteredMembers = computed(() => {
   });
 })
 
-// const isLenOfFileValid = computed(() => {
-//     if(memberData.value.image === null){
-//         return true;
-//     }
-//     return memberData.value.image?.name.length <= 255;
-// });
 
 const handleFileUpload = (() => {
     memberData.value.presignedUrl = URL.createObjectURL(memberData.value.image);
@@ -400,6 +396,7 @@ const openModifyDialog = (idMember) => {
     // Deep copy the member data to avoid reactivity issues
     const findMemberIndexToModify = teamMembers.value.findIndex(member => member.idAccount === idMember)
     if(findMemberIndexToModify !== -1){
+        originalMemberData.value = JSON.parse(JSON.stringify(teamMembers.value[findMemberIndexToModify]))
         memberData.value = teamMembers.value[findMemberIndexToModify]
         console.log('aici' , memberData.value)
     }else{
@@ -415,6 +412,10 @@ const openModifyDialog = (idMember) => {
 }
 
 const closeDialog = () => {
+    if(isModifying.value === true){
+        const findIndexThatUserTriedToModify = teamMembers.value.findIndex(member => member.idAccount === originalMemberData.value.idAccount)
+        teamMembers.value[findIndexThatUserTriedToModify] = originalMemberData.value
+    }
     showDialog.value = false;
     isModifying.value = false;
 
@@ -444,7 +445,7 @@ const saveOrModify = (async () => {
         const endpoint = isModifying.value ? 'admin/account/modify' : 'admin/account/create'
         const method = isModifying.value ? 'PUT' : 'POST'
         formData.append('accountString' , JSON.stringify(memberData.value))
-        console.log(memberData.value)
+        process.env.NODE_ENV === 'development' ? console.log(memberData.value) : ''
         if (memberData.value.image) {
             formData.append('image', memberData.value.image);
         }else{
@@ -458,7 +459,7 @@ const saveOrModify = (async () => {
             })
             
             Swal.close()
-            console.log(response)
+            process.env.NODE_ENV === 'development' ? console.log(response) : ''
             if(!isModifying.value){
                 fireAlarm('success' , 'Success' , 'Creat cu success' , null,1000,'top-end')
                 memberData.value.idAccount = response.id
@@ -478,7 +479,7 @@ const saveOrModify = (async () => {
             }
             closeDialog()
         } catch (error) {
-            console.log(error)
+            process.env.NODE_ENV === 'development' ? console.log(error) : ''
             Swal.close();
             Swal.fire("Eroare", error.data?.message || "O eroare generala a avut loc", "error",2000);
         }

@@ -86,7 +86,7 @@ const authAdmin = async () => {
             navigateTo('/admin/team')
         } catch (error) {
             waitAlert.value = false
-            console.error(error)
+            process.env.NODE_ENV === 'development' ? console.error(error) : ''
             if(error.statusCode === 401){
                 invalidKeyAlert.value = true
             }else{
@@ -113,7 +113,7 @@ const getAdminPage = async () => {
         method: 'GET',
         credentials: 'include' // important for cookies
       })
-
+      console.log(data)
       // backend returns plain string, so handle it directly
       if (data === "Please authorize yourself") {
         console.log("authorize again")
