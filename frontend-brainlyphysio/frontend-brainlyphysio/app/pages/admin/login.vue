@@ -120,11 +120,8 @@ const getAdminPage = async () => {
         authorizeAgain.value = true
         return
       }
-
-      if (data === null) {
-        await navigateTo('/admin/team')
-      }
-
+      navigateTo('/admin/team')
+      
     } catch (err) {
       console.error("Network error:", err)
       authorizeAgain.value = true
