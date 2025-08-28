@@ -324,9 +324,9 @@ const memberFormData = ref([
         rules: [
             value => {
                 if (!value) return true; 
-
                 return value.name.length <= 255 || 'Numele fișierului trebuie să aibă mai puțin de 255 de caractere';
-            }
+            },
+            
         ],
     },
     {
@@ -364,6 +364,7 @@ const filteredMembers = computed(() => {
     return (
         member.name.toLowerCase().includes(searchTerm) || 
         member.prename.toLowerCase().includes(searchTerm) ||
+        member.email.toLowerCase().includes(searchTerm) ||
         member.phoneNumber.includes(searchTerm)
     );
   });

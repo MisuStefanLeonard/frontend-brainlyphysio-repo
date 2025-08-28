@@ -121,8 +121,8 @@ const getAdminPage = async () => {
         return
       }
 
-      if (data === "Authorized") {
-        navigateTo('/admin/team')
+      if (data === null) {
+        await navigateTo('/admin/team')
       }
 
     } catch (err) {
