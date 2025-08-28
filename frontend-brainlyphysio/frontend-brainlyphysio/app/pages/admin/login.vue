@@ -109,27 +109,19 @@ const authAdmin = async () => {
 const getAdminPage = async () => {
   if (route.query.redirect === "redirect") {
     try {
-      const response = await $fetch(config.public.apiBase + 'admin/login/redirect', {
+      const data = await $fetch(config.public.apiBase + 'admin/login/redirect', {
         method: 'GET',
-        credentials: 'include' // important for sending cookies
+        credentials: 'include' // important for cookies
       })
 
-      if (!response.ok) {
-        console.error("Fetch error:", response.status, response.statusText)
-        authorizeAgain.value = true
-        return
-      }
-
-      // if backend sends plain text messages
-      const data = await response.text()
-
+      // backend returns plain string, so handle it directly
       if (data === "Please authorize yourself") {
         console.log("authorize again")
         authorizeAgain.value = true
         return
       }
 
-      if (data === "Authorized" || response.status === 204) {
+      if (data === "Authorized") {
         navigateTo('/admin/team')
       }
 
@@ -139,6 +131,7 @@ const getAdminPage = async () => {
     }
   }
 }
+
 
 onMounted(async () => {
   await getAdminPage()
