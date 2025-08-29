@@ -104,7 +104,7 @@
       </div>
       <v-divider v-for="i in 50" :key="i" opacity="0"></v-divider>
       <!-- Echipa -->
-      <section id="members" class="text-center w-100" v-if="members && members.length > 0">
+      <section id="members" class="text-center" v-if="members && members.length > 0">
         <p class="font-weight-thin text-h5 text-center">Echipa</p>
         <div class="ma-4">
           <v-row>
@@ -117,7 +117,7 @@
             >
               <v-card class="mx-auto elevation-12 rounded-xl text-center" >
                 <div class="image-container">
-                  <v-img :src="item.presignedUrl" height="500"  cover class="zoom-image"></v-img>
+                  <v-img :src="item.presignedUrl" height="500"  cover  class="zoom-image"></v-img>
                 </div>
   
                 <v-card-title>
