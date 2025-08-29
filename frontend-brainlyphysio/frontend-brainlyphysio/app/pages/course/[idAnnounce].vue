@@ -177,23 +177,17 @@ const { data: announceData, pending, error } = await useAsyncData(
 
 // Gestionează erorile de la fetch
 if (error.value) {
-    // Pe server, aruncăm o eroare care va afișa pagina de eroare Nuxt
-    if (process.server) {
-        showError({ statusCode: 404, statusMessage: 'Cursul nu a fost găsit' });
-    }
-    // Pe client, putem afișa un alert și redirecționa
-    if (process.client) {
-        console.error("Eroare la preluarea cursului:", error.value);
-        Swal.fire({
-            text: 'Cursul nu a fost găsit sau a apărut o eroare.',
-            title: 'Eroare',
-            icon: 'error',
-            position: 'center'
-        }).then(() => {
-            navigateTo('/courses');
-        });
-    }
+  console.error("Eroare la preluarea cursului:", error.value);
+  Swal.fire({
+    text: 'Cursul nu a fost găsit sau a apărut o eroare.',
+    title: 'Eroare',
+    icon: 'error',
+    position: 'center'
+  }).then(() => {
+    navigateTo('/courses');
+  });
 }
+
 
 // Folosim `pending` pentru a controla starea de încărcare în template
 const wasFetched = computed(() => !pending.value && !error.value);

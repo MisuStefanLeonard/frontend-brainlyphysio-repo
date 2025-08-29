@@ -161,7 +161,7 @@
                                     <NuxtLink
                                         v-for="(logo, index) in logos"
                                         :key="index"
-                                        :to="logo.href"  
+                                        :to="logo.redirect"  target="_blank"
                                         class="cursor-pointer mr-4"
                                     >
                                         <v-tooltip :text="logo.text">

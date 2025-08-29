@@ -200,7 +200,7 @@ const loadAnnounces = (async () => {
 
     if(error.value === undefined){
         announcesList.value = data.value
-        console.log(announcesList.value)
+        process.env.NODE_ENV === 'development' ? console.log(announcesList.value) : ''
     }else{
         console.error(error.value)
     }
