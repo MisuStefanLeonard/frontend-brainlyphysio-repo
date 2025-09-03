@@ -40,7 +40,7 @@
           <v-divider v-for="i in 20" :key="i" opacity="0"></v-divider>
           <v-btn @mouseenter="mouseEnterFunc()"
           @mouseleave="mouseLeaveFunc()"
-            @click="navigateTo('https://wa.me/40725283713')"  class="rounded-xl "
+            @click="navigateTo('https://wa.me/40725283713' , {external: true})"  class="rounded-xl "
             :variant="makeOutlined === true ? 'outlined' : 'flat'">
             <v-icon class="mr-2" :icon="mdiPhone"></v-icon>
             {{ buttonText }}
@@ -50,7 +50,7 @@
           <v-btn @mouseenter="mouseEnterFuncMail()"
           @mouseleave="mouseLeaveFuncMail()"
              class="rounded-xl "
-             @click="navigateTo('mailto:pascu.aeduard@yahoo.com')"
+             @click="navigateTo('mailto:pascu.aeduard@yahoo.com' , {external: true})"
             :variant="makeOutlinedMail === true ? 'outlined' : 'flat'">
             <v-icon class="mr-2" :icon="mdiEmail"></v-icon>
             {{ buttonMailText }}
