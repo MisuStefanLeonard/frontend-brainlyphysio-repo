@@ -189,6 +189,7 @@ const deleteAnnounce = (async (id) => {
         swal.close()
         fireAlarm('success' , 'Success' , 'Sters cu succes!' , null , 2000 , 'top-end')
         announcesList.value.splice(id,1);
+        announcesList.value = announcesList.value.filter(announce => announce.idAnnounce !== id)
     } catch (error) {
         fireAlarm('error' , 'Eroare' , `${error.data?.message}` , '' , 3000)
         setTimeout(() => {

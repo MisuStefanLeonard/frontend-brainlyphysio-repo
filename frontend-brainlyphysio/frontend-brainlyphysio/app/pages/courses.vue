@@ -33,14 +33,14 @@
                                                 v-bind="props"
                                                 @click="navigateTo(`/course/${item.idAnnounce}`)"
                                                 :src="item.presignedUrl"
-                                                height="500px"
                                                 cover
-                                                class="zoom-image cursor-pointer contain-image"
+                                                :height="800"
+                                                class="zoom-image cursor-pointer"
                                             ></v-img>
                                         </template>
                                     </v-tooltip>
                                 </div>
-                
+
                                 <v-card-title class="text-center">
                                     {{ item.courseTitle }}
                                 </v-card-title>
@@ -48,7 +48,7 @@
                                     <p class="font-weight-bold">Format: {{ item.format }}</p>
                                     <p class="font-weight-bold">Traineri: {{ item.trainers }}</p>
                                 </v-card-subtitle>
-                                <v-card-actions>
+                                <v-card-actions class="my-4">
                                 <v-row class="text-center">
                                     <v-col cols="6">
                                         <v-btn variant="flat" color="orange-lighten-2" @click="expandedSectionIndex = (expandedSectionIndex === indexAnnounce ? null : indexAnnounce)">
@@ -156,6 +156,7 @@
 import ContactBannerFooter from '~/components/user/ContactBannerFooter.vue'
 import { useDisplay } from 'vuetify'
 import { mdiEmoticonSadOutline,mdiArrowRight,mdiChevronUp,mdiArrowDown,mdiArrowUp, mdiEye } from '@mdi/js'
+import { NuxtImg } from '#components'
 
 definePageMeta({
     layout: 'default',
@@ -173,7 +174,6 @@ useSeoMeta({
 })
 
 
-
 const config = useRuntimeConfig()
 const announcesList = ref([])
 const expandedSectionIndex = ref(-1)
@@ -189,29 +189,31 @@ const height = computed(() => {
     }
 })
 
-const loadAnnounces = (async () => {
-    const method = 'GET'
-    const url = 'user/announces'
+const method = 'GET'
+const url = 'user/announces'
 
-    const {data,error} = await useFetch(config.public.apiBase + url, {
-        credentials: 'include',
-        method : method
-    })
-
-    if(error.value === undefined){
-        announcesList.value = data.value
-        process.env.NODE_ENV === 'development' ? console.log(announcesList.value) : ''
-    }else{
-        console.error(error.value)
-    }
+const {data,error} = await useFetch(config.public.apiBase + url, {
+    credentials: 'include',
+    method : method
 })
 
-onBeforeMount(() => {
-    setTimeout(async () => {
-        await loadAnnounces()
-    }, 1);
+if(error.value === undefined){
+    announcesList.value = data.value
+    process.env.NODE_ENV === 'development' ? console.log(announcesList.value) : ''
+}else{
+    console.error(error.value)
+}
+
+// const loadAnnounces = (async () => {
+   
+// })
+
+// onBeforeMount(() => {
+//     setTimeout(async () => {
+//         await loadAnnounces()
+//     }, 1);
     
-})
+// })
 
 </script>
 
@@ -234,7 +236,4 @@ onBeforeMount(() => {
     transform: scale(1.1);
 }
 
-.contain-image .v-img__img {
-  object-fit: contain !important; /* instead of cover */
-}
 </style>

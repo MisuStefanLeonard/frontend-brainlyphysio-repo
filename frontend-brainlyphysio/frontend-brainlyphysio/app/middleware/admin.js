@@ -17,6 +17,6 @@ export default defineNuxtRouteMiddleware((to, from) => {
   if (!userStore.isAuthenticated || !userStore.isAdmin) {
     const requiredForAdminMessage = "Trebuie sa fiti logat ca si admin!"
     userStore.showSnackbar(requiredForAdminMessage);
-    return navigateTo('/user/logout');
+    return navigateTo('/logout');
   }
 });

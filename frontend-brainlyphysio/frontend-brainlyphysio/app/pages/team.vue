@@ -28,8 +28,6 @@
                   <div class="image-container">
                     <v-img v-if="members[0].presignedUrl !== 'empty'"
                     :src="members[0].presignedUrl"
-                     height="500px"
-                     cover 
                      class="zoom-image">
                     </v-img>
                     <v-img v-else
@@ -190,6 +188,7 @@
   import ContactBannerFooter from '~/components/user/ContactBannerFooter.vue'
   import { useDisplay } from 'vuetify'
   import { mdiArrowRight, mdiChevronDown, mdiChevronUp, mdiEmail, mdiPhone, mdiStar } from '@mdi/js'
+
   
   definePageMeta({
     layout: 'default'
@@ -222,33 +221,22 @@
     }
   })
   
-
-  const loadTeamMembers = (async () => {
-    const getURL = 'user/members'
-    const method = 'GET'
-
-    const {data,error} = await useFetch(config.public.apiBase + getURL , {
-      method: method,
-      credentials: 'include',
-      // server: false,
-    })
-
-    if(error.value === undefined){
-      members.value = data.value
-      process.env.NODE_ENV === 'development' ? console.log(members.value) : ''
-    }else{
-      console.error("Error occured when fethcing members. Sorry")
-    }
+  const getURL = 'user/members'
+  const method = 'GET'
+  const {data,error} = await useFetch(config.public.apiBase + getURL, {
+    method: method,
+    credentials: 'include',
+    immediate: true,
+    watch: false
   })
 
- 
-  
+  if(error.value === undefined){
+    members.value = data.value
+    process.env.NODE_ENV === 'development' ? console.log(members.value) : ''
+  }else{
+    console.error("Error occured when fethcing members. Sorry")
+  }
 
-  onBeforeMount( () => {
-    setTimeout(async () => {
-      await loadTeamMembers()
-    }, 1);
-  })
 
   onMounted(() => {
     loaded.value = true

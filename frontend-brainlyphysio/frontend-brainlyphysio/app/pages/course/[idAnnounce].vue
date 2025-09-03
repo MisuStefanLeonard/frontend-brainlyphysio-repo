@@ -1,11 +1,12 @@
 <template>
     <div v-if="wasFetched">
         <div data-aos="fade-down">
-            <v-img :src="announceData.presignedUrl" :aspect-ratio="10/5" cover>
+            <v-img :src="announceData.presignedUrl" cover :aspect-ratio=" height===12 ? 10/10 : ''">
             <div class="overlay d-flex justify-center align-center fill-height text-h6 elevation-24">
                 <v-row>
                 <v-col cols="12">
-                    <p class="text-h3 text-white font-weight-light text-center">{{ announceData.courseTitle }}</p>
+                    <p class="text-h3 text-white font-weight-light text-center"
+                    :class="height === 12 ? 'text-subtitle-1' : 'text-h3'">{{ announceData.courseTitle }}</p>
                 </v-col>
                 </v-row>
             </div>
