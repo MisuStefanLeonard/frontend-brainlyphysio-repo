@@ -32,7 +32,7 @@
                   color="white"
                   variant="outlined"
                   class="rounded-xl hoverBtn"
-                  @click="navigateTo('https://wa.me/40725283713')"
+                  @click="navigateTo('https://wa.me/40725283713' , {external: true})"
                 >
                   <span class="text-white font-weight-thin text-h5">
                     Da, vreau să discutăm!
