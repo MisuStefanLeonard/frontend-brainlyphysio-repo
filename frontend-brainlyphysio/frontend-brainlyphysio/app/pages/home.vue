@@ -183,6 +183,7 @@
                     </v-card>
                 </v-col>
                 <v-col cols="12" data-aos="fade-left">
+                    <h2 class="font-weight-light text-center">Recenzii</h2>
                     <div class='sk-ww-google-reviews' data-embed-id='25599468'></div>
                 </v-col>
             </v-row>
