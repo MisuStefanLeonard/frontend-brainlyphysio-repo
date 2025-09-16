@@ -182,6 +182,9 @@
                         </v-row>
                     </v-card>
                 </v-col>
+                <v-col cols="12" data-aos="fade-left">
+                    <div class='sk-ww-google-reviews' data-embed-id='25599468'></div>
+                </v-col>
             </v-row>
         </section>
         <ContactBannerFooter/>
@@ -197,6 +200,7 @@ import ContactBannerFooter from '~/components/user/ContactBannerFooter.vue';
 definePageMeta({
     layout: 'default',
 })
+
 
 
 useSeoMeta({
@@ -238,6 +242,8 @@ const logos = [
         redirect : 'https://www.patreon.com/BrainlyPhysio?utm_campaign=creatorshare_creator'
     },
 ]
+
+
 
 </script>
 

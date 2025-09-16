@@ -81,6 +81,10 @@
     script: 
     [
       {
+        src: 'https://widgets.sociablekit.com/google-reviews/widget.js',
+        defer: true
+      },
+      {
         innerHTML: process.env.NODE_ENV === 'production' ? 
          `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
